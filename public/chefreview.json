@@ -1,0 +1,34 @@
+
+
+[
+    {
+      "id": 1,
+      "name": "Spaghetti Bolognese",
+      "recipe": "Classic spaghetti with meat sauce",
+      "price": 12.99,
+      "img":"https://i.ibb.co/YcvBVNZ/slide2.jpg"
+      
+    },
+    {
+      "id": 2,
+      "name": "Chicken Alfredo",
+      "recipe": "Creamy Alfredo sauce with grilled chicken",
+      "price": 15.99,
+      "img":"https://i.ibb.co/gJLQqzH/slide3.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Margherita Pizza",
+      "recipe": "Fresh tomatoes, mozzarella, and basil",
+      "price": 10.99,
+      "img":"https://i.ibb.co/HDN7Bdr/slide4.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Caesar Salad",
+      "recipe": "Romaine lettuce, croutons, and Caesar dressing",
+      "price": 8.99,
+      "img":"https://i.ibb.co/v47gSP2/slide1.jpg"
+    }
+   
+  ]
