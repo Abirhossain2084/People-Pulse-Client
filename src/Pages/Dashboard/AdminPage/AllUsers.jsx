@@ -18,7 +18,7 @@ const AllUsers = () => {
         }
     })
 
-    const handleMakeAdmin = user => {
+    const handlemakeHr = user => {
         axiosSecure.patch(`/users/admin/${user._id}`)
             .then(res => {
                 console.log(res.data);
@@ -27,7 +27,7 @@ const AllUsers = () => {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: `${user.name} is an Admin Now!`,
+                        title: `${user.name} is an HR Now!`,
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -56,7 +56,7 @@ const AllUsers = () => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "User has been Fired.",
                                 icon: "success"
                             });
                             refetch();
@@ -91,8 +91,8 @@ const AllUsers = () => {
                             <th>Image</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
-                            <th>Action</th>
+                            <th>Promotion</th>
+                            <th>Fire</th>
                         </tr>
                     </thead>
                     <tbody className='text-black font-bold'>
@@ -119,22 +119,22 @@ const AllUsers = () => {
                                     </td>
                                     <td>{user.email}</td>
                                     <th>
-                                        { user.role === 'admin' ? 
-                                        'Admin'
+                                        { user.role === 'hr' ? 
+                                        'HR'
                                         : 
                                         <button
-                                            onClick={() => handleMakeAdmin(user)}
-                                            className="btn btn-ghost btn-xs bg-yellow-600">
+                                            onClick={() => handlemakeHr(user)}
+                                            className="btn btn-ghost btn-xs bg-green-600">
 
-                                            <FaPeopleGroup className='text-lg text-red-600' />
+                                           Make HR {/* <FaPeopleGroup className='text-lg text-red-600' /> */}
                                         </button>}
                                     </th>
                                     <th>
                                         <button
                                             onClick={() => handleDelete(user)}
-                                            className="btn btn-ghost btn-xs bg-yellow-600">
+                                            className=" btn btn-ghost btn-s bg-blue-300">
 
-                                            <FaTrash className='text-lg text-red-600' />
+                                          FIRE  <FaTrash className='text-lg text-red-600' />
                                         </button>
                                     </th>
                                 </tr>)

@@ -1,11 +1,11 @@
-import {  FaCalendar, FaCartShopping,  FaHouse, FaInbox,   FaSquarePollVertical,  FaTableList, FaUser, FaUtensils } from "react-icons/fa6";
+import {  FaCalendar,   FaHouse, FaInbox,   FaSheetPlastic,   FaSquarePollVertical,  FaTableList, FaUser, FaUtensils } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
-import useCart from "../Hooks/useCart";
+import useWorksheet from "../Hooks/useWorksheet";
 import useAdmin from "../Hooks/useAdmin";
 import useHr from "../Hooks/useHr";
 
 const Dashboard = () => {
-    const [cart] = useCart();
+    const [worksheet] = useWorksheet();
     const [isAdmin] = useAdmin();
     const [isHr] = useHr();
 
@@ -24,14 +24,7 @@ const Dashboard = () => {
                                 <FaHouse className="text-2xl" />
                                 <NavLink to='/dashboard/adminhome'>Admin Home</NavLink>
                             </li>
-                            <li className="flex gap-2 p-2">
-                                <FaUtensils className="text-2xl" />
-                                <NavLink to='/dashboard/additem'>Add Items</NavLink>
-                            </li>
-                            <li className="flex gap-2 p-2">
-                                <FaTableList className="text-2xl" />
-                                <NavLink to='/dashboard/manageitem'>Manage Items </NavLink>
-                            </li>
+                           
                             <li className="flex gap-2 p-2">
                                 <FaUser className="text-2xl" />
                                 <NavLink to='/dashboard/allusers'>All Users</NavLink>
@@ -50,7 +43,7 @@ const Dashboard = () => {
                             </li>
                             <li className="flex gap-2 p-2">
                                 <FaSquarePollVertical className="text-2xl" />
-                                <NavLink to='/dashboard/employee-details'>Employee Details</NavLink>
+                                <NavLink to='/dashboard/employee-progress'>Employee Progress</NavLink>
                             </li>
                         </>
                     ) : (
@@ -58,15 +51,15 @@ const Dashboard = () => {
                         <>
                             <li className="flex gap-2 p-2">
                                 <FaHouse className="text-2xl" />
-                                <NavLink to='/dashboard/userhome'>User Home</NavLink>
+                                <NavLink to='/dashboard/userhome'>Employee Home</NavLink>
                             </li>
                             <li className="flex gap-2 p-2">
                                 <FaCalendar className="text-2xl" />
                                 <NavLink to='/dashboard/paymentHistory'>Payment History</NavLink>
                             </li>
                             <li className="flex gap-2 p-2">
-                                <FaCartShopping className="text-2xl" />
-                                <NavLink to='/dashboard/cart'>My Cart : <span className="">{cart.length}</span></NavLink>
+                                <FaSheetPlastic className="text-2xl" />
+                                <NavLink to='/dashboard/worksheet'>Work Sheet</NavLink>
                             </li>
                         </>
                     )}

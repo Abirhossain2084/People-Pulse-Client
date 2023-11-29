@@ -10,12 +10,10 @@ import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Secret from "../Pages/Shared/Secret/Secret";
 import Dashboard from "../Layout/Dashboard";
-import Cart from "../Pages/Dashboard/UserPage/Cart/Cart";
+
 import AllUsers from "../Pages/Dashboard/AdminPage/AllUsers";
-import AddItems from "../Pages/Dashboard/AdminPage/AddItems";
+import WorkSheet from "../Pages/Dashboard/UserPage/Cart/WorkSheet";
 import AdminRoute from "./AdminRoute";
-import ManageItems from "../Pages/Dashboard/AdminPage/ManageItems";
-import UpdateItem from "../Pages/Dashboard/AdminPage/UpdateItem";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory";
 import AdminHome from "../Pages/Dashboard/AdminPage/AdminHome";
@@ -24,7 +22,9 @@ import HrHome from "../Pages/Dashboard/HRpage/HrHome";
 import HrRoute from "./HrRoute";
 import EmployeeRoute from "./EmployeeRoute";
 import EmployeList from "../Pages/Dashboard/HRpage/EmployeList";
+
 import EmployeeDetails from "../Pages/Dashboard/HRpage/EmployeeDetails";
+import EmployeeProgress from "../Pages/Dashboard/HRpage/EmployeeProgress";
 
 
 
@@ -83,6 +83,10 @@ export const router = createBrowserRouter([
                 path:'employee-details/users/:id',
                 element:<HrRoute><EmployeeDetails></EmployeeDetails></HrRoute>,
             },
+            {
+                path:'employee-progress',
+                element:<HrRoute><EmployeeProgress></EmployeeProgress></HrRoute>,
+            },
             
           
             // admin routes
@@ -96,29 +100,18 @@ export const router = createBrowserRouter([
                 path:'allusers',
                 element:<AdminRoute><AllUsers></AllUsers></AdminRoute>,
             },
-            {
-                path:'additem',
-                element:<AdminRoute><AddItems></AddItems></AdminRoute>,
-            },
-            {
-                path:'manageitem',
-                element:<AdminRoute><ManageItems></ManageItems></AdminRoute>,
-            },
-            {
-                path:'updateitem/:id',
-                element:<AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
-            },
+           
 
-             //user routes
+             //Employee routes
              {
                 path:'userhome',
                 element:<EmployeeRoute><UserHome></UserHome></EmployeeRoute>,
             },
-            {
-                path:'cart',
-                element:<Cart></Cart>,
+             {
+                path:'worksheet',
+                element:<EmployeeRoute><WorkSheet></WorkSheet></EmployeeRoute>,
             },
+           
             {
                 path:'payment',
                 element:<Payment></Payment>,

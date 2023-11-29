@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
-import useCart from "../../Hooks/useCart";
+import useWorksheet from "../../Hooks/useWorksheet";
 
 
 
@@ -16,7 +16,7 @@ const FoodCard = ({ item }) => {
   const location = useLocation();
   const axiosSecure =useAxiosSecure();
 
-  const[,refetch] = useCart();
+  const[,refetch] = useWorksheet();
 
   const handleAddCart = () => {
 
