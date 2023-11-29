@@ -54,10 +54,11 @@ const Register = () => {
                             password: data.password,
                             image: data.photoURL,
                             registred_image: res.data.data.display_url,
-                            registred_role: data.role,
+                            role: data.role,
                             bank_acc: data.bank_account_no,
                             salary: data.salary,
                             designation: data.designation,
+                            isVerfied:false,
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
@@ -192,7 +193,7 @@ const Register = () => {
                                 <option value="" disabled>Select a role</option>
                                 <option value="employee">Employee</option>
                                 <option value="hr">HR</option>
-                                <option value="admin">Admin</option>
+                                {/* <option value="admin">Admin</option> */}
                             </select>
                         </div>
 

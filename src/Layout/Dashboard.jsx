@@ -1,4 +1,4 @@
-import {  FaCalendar, FaCartShopping,  FaHouse, FaInbox, FaList,  FaTableList, FaUser, FaUtensils } from "react-icons/fa6";
+import {  FaCalendar, FaCartShopping,  FaHouse, FaInbox,   FaSquarePollVertical,  FaTableList, FaUser, FaUtensils } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 import useAdmin from "../Hooks/useAdmin";
@@ -44,6 +44,14 @@ const Dashboard = () => {
                                 <FaHouse className="text-2xl" />
                                 <NavLink to='/dashboard/hrhome'>HR Home</NavLink>
                             </li>
+                            <li className="flex gap-2 p-2">
+                                <FaUser className="text-2xl" />
+                                <NavLink to='/dashboard/employee-list'>Employee List</NavLink>
+                            </li>
+                            <li className="flex gap-2 p-2">
+                                <FaSquarePollVertical className="text-2xl" />
+                                <NavLink to='/dashboard/employee-details'>Employee Details</NavLink>
+                            </li>
                         </>
                     ) : (
                         // ::::::: employee site ::::::::
@@ -68,11 +76,7 @@ const Dashboard = () => {
                     <li className="flex gap-2 p-2">
                         <FaHouse className="text-2xl" />
                         <NavLink to='/'> Home</NavLink>
-                    </li>
-                    <li className="flex gap-2 p-2">
-                        <FaList className="text-2xl" />
-                        <NavLink to='/menu'> Menus</NavLink>
-                    </li>
+                    </li>                 
                     <li className="flex gap-2 p-2">
                         <FaInbox className="text-2xl" />
                         <NavLink to='/contact'> Contact</NavLink>

@@ -23,6 +23,8 @@ import UserHome from "../Pages/Dashboard/UserPage/UserHome";
 import HrHome from "../Pages/Dashboard/HRpage/HrHome";
 import HrRoute from "./HrRoute";
 import EmployeeRoute from "./EmployeeRoute";
+import EmployeList from "../Pages/Dashboard/HRpage/EmployeList";
+import EmployeeDetails from "../Pages/Dashboard/HRpage/EmployeeDetails";
 
 
 
@@ -72,6 +74,14 @@ export const router = createBrowserRouter([
             {
                 path:'hrhome',
                 element:<HrRoute><HrHome></HrHome></HrRoute>,
+            },
+            {
+                path:'employee-list',
+                element:<HrRoute><EmployeList></EmployeList></HrRoute>,
+            },
+            {
+                path:'employee-details/users/:id',
+                element:<HrRoute><EmployeeDetails></EmployeeDetails></HrRoute>,
             },
             
           
