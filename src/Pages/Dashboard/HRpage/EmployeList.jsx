@@ -186,7 +186,7 @@ const EmployeList = () => {
                             <label htmlFor="year" required className="form-label">Year:</label>
                             <input type="number" className="form-control" id="year" value={year} onChange={(e) => setYear(e.target.value)} required />
                         </div>
-                        <Link to='/dashboard/payment'>
+                        <Link to='/dashboard/hrhome'>
                             <button
                                 onClick={payEmployee}
                                 className="bg-green-500 text-white p-2 rounded"
