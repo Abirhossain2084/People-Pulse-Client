@@ -75,7 +75,7 @@ const Dashboard = () => {
                                 <NavLink to='/dashboard/paymentHistory'> <FaCalendar className="text-2xl" />Payment History</NavLink>
                             </li>
                             <li className="flex p-2">
-                                <FaSheetPlastic className="text-2xl" />
+                               
                                 <NavLink to='/dashboard/worksheet'> <FaSheetPlastic className="text-2xl" />Work Sheet</NavLink>
                             </li>
                         </>

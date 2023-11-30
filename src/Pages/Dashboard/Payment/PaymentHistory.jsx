@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 
 const PaymentHistory = () => {
@@ -18,9 +19,16 @@ const PaymentHistory = () => {
     console.log(payments);
 
     return (
-        <div>
+       <div>
+        <SectionTitle
+        subheading={'All payment history'}
+        heading={'Payments'}
+        >
+
+        </SectionTitle>
+         <div className="  bg-gradient-to-r from-indigo-500  to-[#4F6F52] ... rounded-lg">
             <h2 className="text3-xl text-center font-bold text-2xl">Total Payments: {payments.length}</h2>
-            <div className="overflow-x-auto bg-slate-300 rounded-lg">
+            <div className="overflow-x-auto  rounded-lg">
                 <table className="table table-zebra">
                     {/* head */}
                     <thead>
@@ -45,6 +53,7 @@ const PaymentHistory = () => {
                 </table>
             </div>
         </div>
+       </div>
     );
 };
 

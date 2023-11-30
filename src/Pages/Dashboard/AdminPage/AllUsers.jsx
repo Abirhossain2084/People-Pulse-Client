@@ -6,6 +6,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const AllUsers = () => {
     const axiosSecure = useAxiosSecure();
+
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
@@ -70,7 +71,7 @@ const AllUsers = () => {
                 <h2 className='text-2xl font-bold'>Total Users: {users.length}</h2>
                 <button
                     onClick={toggleView}
-                    className='btn btn-sm btn-primary'
+                    className='btn btn-sm bg-gradient-to-r from-indigo-500  to-[#4F6F52] ...'
                 >
                     {isTableView ? 'Switch to Card View' : 'Switch to Table View'}
                 </button>
@@ -79,7 +80,7 @@ const AllUsers = () => {
             {isTableView ? (
                 <div className="overflow-x-auto">
                     <table className="table w-full">
-                        <thead className='text-black bg-slate-500  font-bold text-lg'>
+                        <thead className='text-white bg-gradient-to-r from-[#6B240C]  to-[#994D1C] ....  font-bold text-lg'>
                             <tr>
                                 <th>#</th>
                                 <th>Image</th>

@@ -4,6 +4,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { FaInfo } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const EmployeList = () => {
     const axiosSecure = useAxiosSecure();
@@ -88,14 +89,22 @@ const EmployeList = () => {
 
 
     return (
-        <div className='bg-slate-300 p-10 m-20 rounded-lg text-Black'>
+
+        <div>
+               <SectionTitle
+        heading={'Employee List'}
+        subheading={'See All Employes List '}
+        ></SectionTitle>
+            <div className='bg-slate-300 p-10 m-20 rounded-lg text-Black'>
+         
+           
             <div className='flex justify-evenly my-6'>
                 <h2 className='text-2xl font-bold'>Total Employee: {users.length}</h2>
             </div>
             <div className="overflow-x-auto ">
                 <table className="table w-full">
                     {/* head */}
-                    <thead className='text-black bg-slate-500  font-bold text-lg'>
+                    <thead className='text-black bg-gradient-to-r from-indigo-500  to-[#4F6F52] ... text-white  font-bold text-lg'>
                         <tr>
                             <th>#</th>
                             <th>Image</th>
@@ -196,6 +205,8 @@ const EmployeList = () => {
                 </div>
             )}
         </div>
+        </div>
+        
     );
 };
 

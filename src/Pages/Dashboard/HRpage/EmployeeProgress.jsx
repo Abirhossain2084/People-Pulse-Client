@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
  // Import your useAxiosSecure hook
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import WorkSheetTable from './WorkSheetTable ';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 
 
@@ -53,12 +54,21 @@ const EmployeeProgress = () => {
     });
   
     return (
-      <div className='bg-slate-500 text-black font-bold rounded-lg'>
+
+      <div>
+        <SectionTitle
+        heading={'Employee Progress'}
+        subheading={'See all employes progress '}
+        ></SectionTitle>
+         <div className='bg-gradient-to-r from-indigo-500  to-[#4F6F52] ... text-white font-bold rounded-lg grid justify-center items-center'>
+        
+        
         <h2 className='text-center my-8 text-2xl'> Progress Page</h2>
   
         {/* Employee Dropdown */}
         <label>Select Employee:</label>
         <select
+        className='bg-[#4F6F52] border'
           value={selectedEmployee}
           onChange={(e) => setSelectedEmployee(e.target.value)}
         >
@@ -73,6 +83,7 @@ const EmployeeProgress = () => {
         {/* Month Dropdown */}
         <label>Select Month:</label>
         <select
+        className='bg-[#4F6F52] border'
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(e.target.value)}
         >
@@ -84,6 +95,9 @@ const EmployeeProgress = () => {
         {/* Display the table with filtered data */}
         <WorkSheetTable data={filteredTableData} />
       </div>
+      </div>
+
+     
     );
   };
   

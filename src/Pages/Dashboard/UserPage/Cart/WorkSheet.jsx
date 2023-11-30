@@ -69,14 +69,14 @@ const WorkSheet = () => {
         }
     };
     return (
-        <div className="container  mx-auto p-4">
+        <div className="container  mx-auto p-4 bg-gradient-to-r from-indigo-500  to-[#4F6F52] ...">
             <h2 className="text-2xl font-bold mb-4">Work Sheet</h2>
 
             {/* Form */}
             <form
 
-                onSubmit={handleSubmit(onSubmit)} className="flex justify-center items-center bg-slate-300  gap-4 rounded-md my-10">
-                <div>
+                onSubmit={handleSubmit(onSubmit)} className="flex justify-center items-center bg-slate-300  gap-4 rounded-md my-10 px-2 py-2">
+                <div className=''>
                     <label className="block">Tasks</label>
                     <Controller
                         name="tasks"
@@ -95,7 +95,7 @@ const WorkSheet = () => {
                     />
                 </div>
 
-                <div>
+                <div className=''>
                     <label className="block">Hours Worked</label>
                     <Controller
                         name="hoursWorked"
@@ -125,16 +125,16 @@ const WorkSheet = () => {
                 </div>
 
                 <div>
-                    <button className="bg-blue-500 text-white p-2 rounded" type="submit">
+                    <button className="bg-[#4F6F52] text-white p-2 rounded" type="submit">
                         Submit
                     </button>
                 </div>
             </form>
 
             {/* Table */}
-            <table className="w-full border-collapse border border-gray-500">
+            <table className="w-full  border-collapse border bg-gray-500 text-white">
                 <thead>
-                    <tr className="bg-gray-200">
+                    <tr className=" text-black bg-[#4F6F52]">
                         <th className="p-2 border">Tasks</th>
                         <th className="p-2 border">Hours Worked</th>
                         <th className="p-2 border">Date</th>

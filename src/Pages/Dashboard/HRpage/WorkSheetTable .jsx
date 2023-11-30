@@ -3,11 +3,11 @@
 const WorkSheetTable = ({ data }) => {
     console.log(data);
     return (
-        <div className="overflow-x-auto bg-slate-300 rounded-lg my-10">
+        <div className="overflow-x-auto bg-slate-300 text-black rounded-lg my-10">
             <table className="table table-zebra">
                 {/* head */}
                 <thead>
-                    <tr>
+                    <tr className="font-bold text-lg text-black bg-[#4F6F52]">
 
                         <th>Employee Name</th>
                         <th>Tasks</th>
