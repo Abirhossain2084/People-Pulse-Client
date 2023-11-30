@@ -47,7 +47,7 @@ const ContactUsPage = () => {
       />
 
 
-            <div className='bg-slate-400 p-10 rounded-lg'>
+            <div className='bg-gradient-to-r from-indigo-500  to-[#4F6F52] ... p-10 rounded-lg'>
                 {/* Contact form */}
                 <form onSubmit={handleSubmit(onSubmit)} className="mt-4 grid">
                     <label className="block mb-2">Name:</label>

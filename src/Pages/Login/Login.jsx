@@ -72,15 +72,15 @@ const Login = () => {
             <Helmet>
                 <title>Login</title>
             </Helmet>
-            <div className="hero-content flex border bg-slate-200 shadow-lg rounded-lg ">
+            <div className="hero-content flex border bg-gradient-to-r from-indigo-500  to-[#4F6F52]  shadow-2xl rounded-lg ">
 
                 <div className="text-center md:w-1/2 lg:text-left">
-                <h1 className='text-4xl font-bold'>Log in Here</h1>
-                    <img src={loginImg} alt="" />
+                <h1 className='text-4xl text-center my-2 text-white font-bold'>Log in Here</h1>
+                    <img src={'https://i.ibb.co/48W0S6j/P-modern-abstract-logo-design-P-logo-P-letter-logo-template-removebg-preview.png'} alt="" />
                     
                 </div>
 
-                <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+                <div className="card md:w-1/2 max-w-sm shadow-2xl bg-gradient-to-r from-indigo-500  to-[#4F6F52] shadow-2xl">
 
                     <form onSubmit={handleLogin} className="card-body">
 

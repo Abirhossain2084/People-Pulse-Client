@@ -48,7 +48,7 @@ const NavBar = () => {
     </>
     return (
         <div>
-            <div className="navbar fixed z-10 bg-[#3A4D39] bg-opacity-50 font-bold   text-[#FAE7C9]">
+            <div className="navbar fixed z-10 bg-[#4F6F52] bg-opacity-40 font-bold   text-[white]">
                 <div className="navbar-start">
                     <div className="dropdown ">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -95,7 +95,7 @@ const NavBar = () => {
                                
                             </div>
                         </div>
-                        <ul className="menu menu-sm dropdown-content bg-[#3A4D39] mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul className="menu menu-sm dropdown-content bg-[#3A4D39] mt-3 z-[1] p-2 shadow  rounded-box w-52">
                             
                             <li><a>Profile</a></li>
                             
@@ -110,7 +110,7 @@ const NavBar = () => {
                                     </>
                                     :
                                     <> 
-                                    <button className="btn btn-ghost bg-purple-400 ">
+                                    <button className="btn btn-ghost bg-[#4F6F52] ">
                                             <Link to='/login'><li><a>Log in</a></li></Link>
                                         </button>
                                     </>

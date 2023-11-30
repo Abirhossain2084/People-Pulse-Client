@@ -93,18 +93,18 @@ const Register = () => {
 
     return (
 
-        <div className="hero min-h-screen py-32  "
+        <div className="hero min-h-screen  py-32  "
         style={{ backgroundImage: 'url("https://i.ibb.co/nQ3ZT4S/alex-kotliarskyi-QBp-ZGq-EMs-Kg-unsplash.jpg")', backgroundSize: 'cover' }}
         >
             <Helmet>
                 <title>Register</title>
             </Helmet>
 
-            <div className="hero-content flex border bg-slate-200 shadow-lg rounded-lg ">
+            <div className="hero-content flex border bg-gradient-to-r from-indigo-500  to-[#4F6F52] shadow-lg rounded-lg ">
 
 
 
-                <div className="   shadow-2xl bg-base-100" style={{ width: '800px' }}>
+                <div className="   shadow-2xl bg-gradient-to-r from-indigo-500  to-[#4F6F52] " style={{ width: '800px' }}>
                     <h1 className='text-[#B0926A] text-center text-4xl font-bold '>Register here</h1>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body ">
