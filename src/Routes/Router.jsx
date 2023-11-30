@@ -4,11 +4,11 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 
-import Order from "../Pages/OrderPage/Order";
+
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
-import Secret from "../Pages/Shared/Secret/Secret";
+
 import Dashboard from "../Layout/Dashboard";
 
 import AllUsers from "../Pages/Dashboard/AdminPage/AllUsers";
@@ -25,6 +25,7 @@ import EmployeList from "../Pages/Dashboard/HRpage/EmployeList";
 
 import EmployeeDetails from "../Pages/Dashboard/HRpage/EmployeeDetails";
 import EmployeeProgress from "../Pages/Dashboard/HRpage/EmployeeProgress";
+import ContactUsPage from "../Pages/Contactus/ContactUsPage ";
 
 
 
@@ -39,15 +40,7 @@ export const router = createBrowserRouter([
                 path:'/',
                 element:<Home></Home>
             },
-           
-            {
-                path:'/order',
-                element:<Order></Order>
-            },
-            {
-                path:'order/:category',
-                element:<Order></Order>
-            },
+                 
             {
                 path:'login',
                 element:<Login></Login>
@@ -57,9 +50,10 @@ export const router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
-                path:'secret',
-                element:<PrivateRoute><Secret></Secret></PrivateRoute>
+                path:'contactus',
+                element:<ContactUsPage></ContactUsPage>
             },
+            
         ]
     },
     {

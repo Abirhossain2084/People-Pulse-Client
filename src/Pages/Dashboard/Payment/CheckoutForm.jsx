@@ -5,7 +5,8 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
-import useWorksheet from "../../../Hooks/useWorksheet";
+// import useWorksheet from "../../../Hooks/useWorksheet";
+import usePaymentHistoy from "../../../Hooks/usePaymentHistoy";
 
 
 const CheckoutForm = () => {
@@ -16,10 +17,18 @@ const CheckoutForm = () => {
     const elements = useElements();
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth();
-    const [cart, refetch] = useWorksheet();
+    const [paymenthistory, refetch] = usePaymentHistoy();
+
+    // const [paymenthistory] = usePaymentHistoy();
+
+    console.log("payment history", paymenthistory[0]);
+
+   
+
     const navigate = useNavigate();
 
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0)
+    const totalPrice = paymenthistory[0].amount;
+    console.log(totalPrice);
 
     useEffect(() => {
         if (totalPrice > 0) {
@@ -85,8 +94,8 @@ const CheckoutForm = () => {
                     price: totalPrice,
                     transactionId: paymentIntent.id,
                     date: new Date(), 
-                    cartIds: cart.map(item => item._id),
-                    menuItemIds: cart.map(item => item.menuId),
+                    cartIds: paymenthistory.map(item => item._id),
+                    menuItemIds: paymenthistory.map(item => item.menuId),
                     status: 'pending'
                 }
 

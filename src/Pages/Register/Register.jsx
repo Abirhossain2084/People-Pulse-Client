@@ -93,7 +93,9 @@ const Register = () => {
 
     return (
 
-        <div className="hero min-h-screen py-32  ">
+        <div className="hero min-h-screen py-32  "
+        style={{ backgroundImage: 'url("https://i.ibb.co/nQ3ZT4S/alex-kotliarskyi-QBp-ZGq-EMs-Kg-unsplash.jpg")', backgroundSize: 'cover' }}
+        >
             <Helmet>
                 <title>Register</title>
             </Helmet>
@@ -103,7 +105,7 @@ const Register = () => {
 
 
                 <div className="   shadow-2xl bg-base-100" style={{ width: '800px' }}>
-                    <h1 className='text-black text-center text-2xl font-bold '>Register here</h1>
+                    <h1 className='text-[#B0926A] text-center text-4xl font-bold '>Register here</h1>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body ">
 
@@ -198,7 +200,7 @@ const Register = () => {
                         </div>
 
 
-                        <div className="form-control w-full my-6">
+                        <div className="form-control w-full my-6 border-2">
                             <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
                         </div>
 
@@ -209,7 +211,7 @@ const Register = () => {
 
                         <div className="form-control mt-6 grid justify-center gap-2">
 
-                            <input className="btn btn-primary" type="submit" value='Register' />
+                            <input className="btn bg-[#B0926A]" type="submit" value='Register' />
                             <SocialLogin></SocialLogin>
                         </div>
 
@@ -217,7 +219,7 @@ const Register = () => {
                     </form>
 
 
-                    <p className='text-center my-1 font-bold'>New Here?   <Link className='text-orange-400' to='/login'>Login Now</Link> </p>
+                    <p className='text-center text-[#B0926A] my-1 font-bold'>New Here?   <Link className='text-[#E1C78F]' to='/login'>Login Now</Link> </p>
                 </div>
 
 

@@ -23,7 +23,7 @@ const NavBar = () => {
     const NavItems = <>
 
         <Link to='/'><li><a>Home</a></li></Link>
-        <Link to='/contact'><li><a>Contact Us</a></li></Link>
+        <Link to='/contactus'><li><a>Contact Us</a></li></Link>
 
         {
             user ? <Link to='/register'><li><a>Log in/Register</a></li></Link>
@@ -48,13 +48,13 @@ const NavBar = () => {
     </>
     return (
         <div>
-            <div className="navbar fixed z-10 bg-black bg-opacity-50  text-white">
+            <div className="navbar fixed z-10 bg-[#3A4D39] bg-opacity-50 font-bold   text-[#FAE7C9]">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown ">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className=" menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className=" menu menu-sm bg-[#3A4D39] dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
                             {
                                 NavItems
@@ -95,7 +95,7 @@ const NavBar = () => {
                                
                             </div>
                         </div>
-                        <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul className="menu menu-sm dropdown-content bg-[#3A4D39] mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             
                             <li><a>Profile</a></li>
                             
@@ -104,7 +104,7 @@ const NavBar = () => {
 
 
                                     <>
-                                        <button onClick={handleLogOut} className="btn btn-ghost bg-purple-400 ">
+                                        <button onClick={handleLogOut} className="btn btn-ghost bg-[#B0926A]">
                                             <Link to='/login'><li><a>Log out</a></li></Link>
                                         </button>
                                     </>

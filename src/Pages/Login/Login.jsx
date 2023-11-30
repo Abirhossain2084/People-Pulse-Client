@@ -66,14 +66,18 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen py-20 ">
+        <div className="hero min-h-screen py-20 "
+        style={{ backgroundImage: 'url("https://i.ibb.co/nQ3ZT4S/alex-kotliarskyi-QBp-ZGq-EMs-Kg-unsplash.jpg")', backgroundSize: 'cover' }}
+        >
             <Helmet>
                 <title>Login</title>
             </Helmet>
             <div className="hero-content flex border bg-slate-200 shadow-lg rounded-lg ">
 
                 <div className="text-center md:w-1/2 lg:text-left">
+                <h1 className='text-4xl font-bold'>Log in Here</h1>
                     <img src={loginImg} alt="" />
+                    
                 </div>
 
                 <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
@@ -110,14 +114,14 @@ const Login = () => {
                             <input
                             
                             // disabled={disable}
-                             className="btn btn-primary" type="submit" value='Login' />
+                             className="btn  bg-[#B0926A]" type="submit" value='Login' />
                         <SocialLogin></SocialLogin>
                         </div>
 
                       
                     </form>
 
-                    <p className='text-center my-1 font-bold'>New Here?   <Link className='text-orange-400' to='/register'>Register here</Link> </p>
+                    <p className='text-center my-1 font-bold'>New Here?   <Link className='text-[#E1C78F]' to='/register'>Register here</Link> </p>
 
 
                 </div>

@@ -10,31 +10,35 @@ const PaymentHistory = () => {
     const { data: payments = [] } = useQuery({
         queryKey: ['payments', user.email],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/payments/${user.email}`)
+            const res = await axiosSecure.get(`/paymenthistory`)
             return res.data;
         }
     })
 
+    console.log(payments);
+
     return (
         <div>
-            <h2 className="text3-xl">Total Payments: {payments.length}</h2>
-            <div className="overflow-x-auto">
+            <h2 className="text3-xl text-center font-bold text-2xl">Total Payments: {payments.length}</h2>
+            <div className="overflow-x-auto bg-slate-300 rounded-lg">
                 <table className="table table-zebra">
                     {/* head */}
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>price</th>
+                            <th>Email</th>
+                            <th>Amount</th>
                             <th>Transaction Id</th>
-                            <th>Status</th>
+                            <th>Month</th>
                         </tr>
                     </thead>
                     <tbody>
                         {payments.map((payment, index) => <tr key={payment._id}>
                             <th>{index + 1}</th>
-                            <td>${payment.price}</td>
-                            <td>{payment.transactionId}</td>
-                            <td>{payment.status}</td>
+                            <td>${payment.uemail}</td>
+                            <td>${payment.amount}</td>
+                            <td>{payment.userId}</td>
+                            <td>{payment.month}</td>
                         </tr>)}
                         
                     </tbody>

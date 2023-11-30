@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-gray-700 text-primary-content">
+        <footer className="footer footer-center p-10 bg-[#3A4D39] text-primary-content">
   <aside>
     <img className="h-44" src="https://i.ibb.co/48W0S6j/P-modern-abstract-logo-design-P-logo-P-letter-logo-template-removebg-preview.png" alt="" />
     <p className="font-bold">

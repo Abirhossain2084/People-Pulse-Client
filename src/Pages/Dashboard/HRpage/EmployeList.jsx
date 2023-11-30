@@ -47,19 +47,45 @@ const EmployeList = () => {
 
     const payEmployee = () => {
         // Handle the payment logic here, e.g., send a request to the server
+        const paymentData = {
+            userId: selectedUser._id,  // Assuming your user object has an _id field
+            month,
+            year,
+            amount: selectedUser.salary, // Assuming salary is the payment amount
+            timestamp: new Date().toISOString(),
+            uname:selectedUser.name,
+            uemail:selectedUser.email,
+        };
 
-        // Close the pay modal after successful payment
-        setIsPayModalOpen(false);
+        // Make an API request to store payment history
+        axiosSecure.post('/paymenthistory', paymentData)
+            .then(response => {
+                console.log(response);
+                // Close the pay modal after successful payment
+                setIsPayModalOpen(false);
 
-        // Show a success message
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: `Payment successful for ${selectedUser.name}`,
-            showConfirmButton: false,
-            timer: 1500,
-        });
+                // Show a success message
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `Payment successful for ${selectedUser.name}`,
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+
+                // Optionally, you can perform any other actions after successful payment
+            })
+            .catch(error => {
+                // Handle errors, show an error message, etc.
+                console.error('Error storing payment history:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Failed to store payment history. Please try again.',
+                });
+            });
     };
+
 
     return (
         <div className='bg-slate-300 p-10 m-20 rounded-lg text-Black'>
@@ -90,7 +116,7 @@ const EmployeList = () => {
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={user.image} alt={`${user.name}'s avatar`} />
+                                                <img src={user.image ||user.registred_image} alt={`${user.name}'s avatar`} />
                                             </div>
                                         </div>
                                     </div>
@@ -140,23 +166,26 @@ const EmployeList = () => {
             {/* Modal for Paying */}
             {isPayModalOpen && (
                 <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-8 w-96">
-                        <h2 className="text-xl font-bold mb-4">Pay {selectedUser?.name}</h2>
+                    <div className="bg-gray-600 text-white rounded-lg p-8 w-96">
+                        <h2 className="text-xl font-bold mb-4">Pay to {selectedUser?.name}</h2>
                         <p>Salary: ${selectedUser?.salary}</p>
-                        <div className="mb-3">
+                        <div className="mb-3 text-black">
                             <label htmlFor="month" className="form-label">Month:</label>
-                            <input type="number" className="form-control" id="month" value={month} onChange={(e) => setMonth(e.target.value)} required />
+                            <input type="number" required className="form-control" id="month" value={month} onChange={(e) => setMonth(e.target.value)} required />
                         </div>
-                        <div className="mb-3">
-                            <label htmlFor="year" className="form-label">Year:</label>
+                        <div className="mb-3 text-black">
+                            <label htmlFor="year" required className="form-label">Year:</label>
                             <input type="number" className="form-control" id="year" value={year} onChange={(e) => setYear(e.target.value)} required />
                         </div>
-                        <button
-                            onClick={payEmployee}
-                            className="bg-green-500 text-white p-2 rounded"
-                        >
-                            Pay
-                        </button>
+                        <Link to='/dashboard/payment'>
+                            <button
+                                onClick={payEmployee}
+                                className="bg-green-500 text-white p-2 rounded"
+                            >
+                                Pay
+                            </button>
+                        </Link>
+
                         <button
                             onClick={() => setIsPayModalOpen(false)}
                             className="bg-red-500 text-white p-2 rounded ml-4"
