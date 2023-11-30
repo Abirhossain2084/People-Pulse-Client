@@ -1,8 +1,22 @@
-# React + Vite
+# People Pulse [Employee Managment System]
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Features
+
+- **Feature 1:** This website can used by 3 types of user. [employee,Admin and HR]
+- **Feature 2:** Employe and hr must need to register
+- **Feature 3:** Admin panel is previously setted and he has the access of everything 
+
+- **Feature 4:** Hr can manage the employe and their payments .
+- **Feature 5:** employe can see their record ,can done work sheeet and see their paymments also.
+
+
+
+
+### Live site link
+
+https://people-pulse-63cf6.web.app/
+
